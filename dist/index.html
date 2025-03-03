@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三角形面積計算機</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>三角形面積計算機</h2>
+        
+        <label for="base">底邊長 (b)：</label>
+        <input type="number" id="base" placeholder="輸入底邊長" required>
+        
+        <label for="height">高度 (h)：</label>
+        <input type="number" id="height" placeholder="輸入高度" required>
+        
+        <button onclick="calculateArea()">計算面積</button>
+        
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateArea() {
+            // 取得用戶輸入的底邊長和高度
+            var base = parseFloat(document.getElementById("base").value);
+            var height = parseFloat(document.getElementById("height").value);
+
+            // 檢查輸入值是否有效
+            if (isNaN(base) || isNaN(height) || base <= 0 || height <= 0) {
+                alert("請輸入有效的底邊長和高度！");
+                return;
+            }
+
+            // 計算面積：area = (底邊長 * 高度) / 2
+            var area = (base * height) / 2;
+
+            // 顯示結果
+            document.getElementById("result").innerText = "三角形的面積是：" + area.toFixed(2) + " 平方單位";
+        }
+    </script>
+
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
